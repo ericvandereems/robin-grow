@@ -1,13 +1,14 @@
 // ==UserScript==
-// @name         Robin Grow
+// @name         Robin Abandon
 // @namespace    http://tampermonkey.net/
 // @version      1.42
 // @description  Try to take over the world!
-// @author       /u/mvartan
+// @author       /u/Atyri
 // @include      https://www.reddit.com/robin*
 // @updateURL    https://github.com/vartan/robin-grow/raw/master/robin.user.js
 // @grant   GM_getValue
 // @grant   GM_setValue
+// Check out /r/Abaondoneers 
 // ==/UserScript==
 function addMins(date,mins) {
     var newDateObj = new Date(date.getTime() + mins*60000);
@@ -64,7 +65,7 @@ function update() {
         window.location.reload(); // reload if we haven't seen any activity in a minute.
     }
     if($(".robin-message--message:contains('that is already your vote')").length === 0) {
-        $(".text-counter-input").val("/vote grow").submit();
+        $(".text-counter-input").val("/vote abandon").submit();
     }
 
     // Try to join if not currently in a chat
@@ -79,7 +80,7 @@ function update() {
 if(GM_getValue("chatName") != name) {
     GM_setValue("chatName", name);
     setTimeout(function() {
-            $(".text-counter-input").val("[Robin-Grow] I automatically voted to grow, and so can you! http://redd.it/4cwk2s !").submit();
+            $(".text-counter-input").val("[Robin-Abandon] I automatically voted Abandon, and so can you! https://github.com/ericvandereems/Robin-Abandon.git !").submit();
         }, 10000);
 }
 
