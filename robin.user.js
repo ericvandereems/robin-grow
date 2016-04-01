@@ -64,7 +64,7 @@ function update() {
         window.location.reload(); // reload if we haven't seen any activity in a minute.
     }
     if($(".robin-message--message:contains('that is already your vote')").length === 0) {
-        $(".text-counter-input").val("/vote grow").submit();
+        $(".text-counter-input").val("/vote abandon").submit();
     }
 
     // Try to join if not currently in a chat
